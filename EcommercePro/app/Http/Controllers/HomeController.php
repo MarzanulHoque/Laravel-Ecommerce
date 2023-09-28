@@ -9,6 +9,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class HomeController extends Controller
 {
+
+    public function index()
+    {
+        return view('home.userpage');
+    }
+
     public function redirect()
     {
 
@@ -20,7 +26,7 @@ class HomeController extends Controller
         }
 
         else{
-            return view('dashboard');
+            return view('home.userpage');
         }
     }
 }
