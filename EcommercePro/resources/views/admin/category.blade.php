@@ -17,6 +17,13 @@
         .text_color{
             color: black;
         }
+        .center{
+            margin: auto;
+            width: 50%;
+            text-align: center;
+            margin-top: 30px;
+            border:3px solid whitesmoke;
+        }
     </style>
 
   </head>
@@ -50,12 +57,13 @@
         <div class="main-panel">
             <div class="content-wrapper">
 
-                @if (session()->has('message'))
-                    <div class="alert alert-success">
+                @if(session()->has('message'))
 
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true" >x</button>
-                        {{ session()->get('message') }}
-
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <strong>{{ session()->get('message') }}</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                 @endif
 
@@ -70,6 +78,26 @@
                         <input type="submit" class="btn btn-primary" name="submit" value="Add Category">
 
                     </form>
+                </div>
+                <div>
+                    <table class="center">
+                        <tr>
+                            <td>Category Name</td>
+                            <td> Action </td>
+
+                        </tr>
+
+                        @foreach ($data as $item)
+
+                        <tr>
+                            <td> {{ $item->category_name }}</td>
+                            <td> <a onclick="return confirm('Are You Sure Wanna Delete ?')" href="{{ url('delete_category', $item->id) }}" class="btn btn-danger">Delete </a></td>
+                        </tr>
+
+
+                        @endforeach
+
+                    </table>
                 </div>
             </div>
         </div>
