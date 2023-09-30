@@ -36,7 +36,7 @@
 
                     @if (session()->has('message'))
 
-                        <script>alert('{{ session()->get('message') }}')
+                        <script>alert( '{{ session()->get('message') }}' )
                         </script>
 
 
@@ -75,7 +75,7 @@
 
                                 <div>
                                     <label for=""> Product Category </label>
-                                    <select class="text-dark py-2 mb-3" id="" name="categroy" required>
+                                    <select class="text-dark py-2 mb-3" id="" name="category" required>
                                         <option value="" selected>Add a Category </option>
                                         @foreach ($data as $item)
                                             <option value="{{ $item->category_name }}"> {{ $item->category_name }} </option>

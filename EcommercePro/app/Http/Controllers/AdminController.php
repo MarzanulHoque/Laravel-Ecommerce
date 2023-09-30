@@ -40,6 +40,7 @@ class AdminController extends Controller
     }
 
     public function add_product(Request $request)
+
     {
         $product = new product;
 
@@ -59,9 +60,13 @@ class AdminController extends Controller
         $product->save();
         return redirect()->back()->with('message', 'Product Added Successfully');
 
+    }
 
+    public function show_product()
+    {
+        $product = Product::all();
 
-
+        return view('admin.show_product',compact('product'));
     }
 
 }
