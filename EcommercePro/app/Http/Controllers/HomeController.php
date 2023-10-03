@@ -34,4 +34,12 @@ class HomeController extends Controller
 
         }
     }
+
+    public function details($id)
+
+    {
+        $product=product::find($id);
+        return view('home.product_details',compact('product'));
+    }
+
 }
