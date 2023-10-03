@@ -19,6 +19,7 @@ Route::middleware([
 Route::get('/redirect',[HomeController::class , 'redirect']);
 Route::get('/',[HomeController::class , 'index']);
 Route::get('/details/{id}',[HomeController::class , 'details']);
+Route::post('/add_cart/{id}',[HomeController::class , 'add_cart']);
 
 Route::get('/view_category',[AdminController::class , 'view_category']);
 Route::post('/add_category',[AdminController::class , 'add_category']);

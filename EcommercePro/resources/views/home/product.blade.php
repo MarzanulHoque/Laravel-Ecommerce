@@ -16,9 +16,19 @@
                               <a href="{{ url('details', $item->id) }}" class="option1">
                                  Product Details
                               </a>
-                              <a href="" class="option2">
-                              Buy Now
-                              </a>
+
+                              <form action="{{ url('add_cart',$item->id) }}" method="POST">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="number" value="1" min="1" style="width: 100px" name="quantity">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="submit" value="Add to Cart">
+                                    </div>
+                                </div>
+                            </form>
+
                            </div>
                         </div>
                         <div class="img-box">
