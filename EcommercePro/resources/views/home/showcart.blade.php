@@ -49,7 +49,7 @@
             <script>alert( '{{ session()->get('message') }}' )
             </script>
 
-        @endif
+         @endif
 
 
       <div class="main-panel">
@@ -94,8 +94,17 @@
 
                     </table>
 
-                        <div class="div_center h2_font"><h1>Total Price: ${{ $total }}</h1></div>
+                        <div class="div_center h2_font">
+                            <h1>Total Price: ${{ $total }}</h1>
 
+                            <div class="mt-3">
+
+                                <h1 style="font-size:25px; padding-bottom:15px" >Proceed to Order</h1>
+                                <a href="{{ url('cash_order') }}" class="btn btn-success" >Cash On Delivery</a>
+                                <a href="" class="btn btn-success" >Pay With Card</a>
+                            </div>
+
+                        </div>
                 </div>
 
             </div>
